@@ -1,2 +1,2 @@
-FROM centos:7
+FROM ubuntu:xenial
 LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
