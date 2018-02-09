@@ -5,8 +5,21 @@ DEFAULT_IF="$(ip route list | awk '/^default/ {print $5}')"
 IP_ADDRESS="$(ifconfig | grep -A 1 $DEFAULT_IF | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 NODE_ID=$(echo $IP_ADDRESS | sed 's/[^0-9]*//g' | sed 's/.*\(.........\)/\1/')
 
-ZOOKEEPER_HOST=localhost
-ZOOKEEPER_PORT=2181
+if [[ -z "$1" ]]; then
+    echo "Using default Zookeeper Host: localhost"
+    ZOOKEEPER_HOST=localhost
+else
+    ZOOKEEPER_HOST=$1
+    echo "Using Zookeeper Host: $ZOOKEEPER_HOST"
+fi
+
+if [[ -z "$2" ]]; then
+    echo "Using default Zookeeper Port: 2181"
+    ZOOKEEPER_PORT=2181
+else
+    ZOOKEEPER_PORT=$2
+    echo "Using Zookeeper Port: $ZOOKEEPER_PORT"
+fi
 
 ###############################################################################################
 # SERVER PROPERTIES

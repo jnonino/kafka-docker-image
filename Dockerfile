@@ -23,4 +23,4 @@ WORKDIR /opt/kafka
 EXPOSE 9092
 
 COPY start.sh /usr/local/bin
-CMD [ "/usr/local/bin/start.sh" ]
+ENTRYPOINT [ "/usr/local/bin/start.sh" ]
