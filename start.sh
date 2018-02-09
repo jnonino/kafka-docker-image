@@ -40,7 +40,7 @@ echo "# Zookeeper" >> $KAFKA_HOME/config/server.properties
 # root directory for all kafka znodes.
 echo "zookeeper.connect=$ZOOKEEPER_HOST:$ZOOKEEPER_PORT" >> $KAFKA_HOME/config/server.properties
 # Timeout in ms for connecting to zookeeper
-echo "zookeeper.connection.timeout.ms=6000" >> $KAFKA_HOME/config/server.properties
+echo "zookeeper.connection.timeout.ms=30000" >> $KAFKA_HOME/config/server.properties
 
 ### Socket Server Settings
 echo "# Socket Server Settings" >> $KAFKA_HOME/config/server.properties
