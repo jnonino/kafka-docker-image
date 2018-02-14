@@ -11,3 +11,9 @@ For example:
     docker run jnonino/kafka-docker-image zookeeper.host.org:9999
 
     docker run jnonino/kafka-docker-image 10.16.8.29:2181
+
+It is recommended to run an odd number of Kafka brokers, for example:  
+
+    docker run --name kafka1 jnonino/kafka-docker-image <ZOOKEEPER>
+    docker run --name kafka2 jnonino/kafka-docker-image <ZOOKEEPER>
+    docker run --name kafka3 jnonino/kafka-docker-image <ZOOKEEPER>
