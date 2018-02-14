@@ -6,19 +6,11 @@ IP_ADDRESS="$(ifconfig | grep -A 1 $DEFAULT_IF | tail -1 | cut -d ':' -f 2 | cut
 NODE_ID=$(echo $IP_ADDRESS | sed 's/[^0-9]*//g' | sed 's/.*\(.........\)/\1/')
 
 if [[ -z "$1" ]]; then
-    echo "Using default Zookeeper Host: localhost"
+    echo "Using default Zookeeper Host: localhost:2181"
     ZOOKEEPER_HOST=localhost
 else
     ZOOKEEPER_HOST=$1
     echo "Using Zookeeper Host: $ZOOKEEPER_HOST"
-fi
-
-if [[ -z "$2" ]]; then
-    echo "Using default Zookeeper Port: 2181"
-    ZOOKEEPER_PORT=2181
-else
-    ZOOKEEPER_PORT=$2
-    echo "Using Zookeeper Port: $ZOOKEEPER_PORT"
 fi
 
 ###############################################################################################
@@ -38,7 +30,7 @@ echo "# Zookeeper" >> $KAFKA_HOME/config/server.properties
 # server. e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002".
 # You can also append an optional chroot string to the urls to specify the
 # root directory for all kafka znodes.
-echo "zookeeper.connect=$ZOOKEEPER_HOST:$ZOOKEEPER_PORT" >> $KAFKA_HOME/config/server.properties
+echo "zookeeper.connect=$ZOOKEEPER_HOST" >> $KAFKA_HOME/config/server.properties
 # Timeout in ms for connecting to zookeeper
 echo "zookeeper.connection.timeout.ms=30000" >> $KAFKA_HOME/config/server.properties
 
