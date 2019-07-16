@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install required tools, tar, curl, net-tools, iproute and Java JRE
@@ -8,10 +8,10 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Kafka
-ENV KAFKA_VERSION 2.1.0
+ENV KAFKA_VERSION 2.2.0
 ENV SCALA_VERSION 2.12
 
-RUN curl -O http://apache.dattatec.com/kafka/$KAFKA_VERSION/kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz && \
+RUN curl -O http://apache.mirror.anlx.net/kafka/$KAFKA_VERSION/kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz && \
     tar -xvf kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz && \
     rm -rf kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz && \
     mv kafka_$SCALA_VERSION-$KAFKA_VERSION kafka && \
