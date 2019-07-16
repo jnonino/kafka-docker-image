@@ -1,4 +1,4 @@
-# Kafka Docker Image
+# Kafka Docker Image [![Docker hub](https://img.shields.io/docker/pulls/jnonino/kafka.svg)](https://hub.docker.com/r/jnonino/kafka/)
 
 This Docker Image creates a Kafka node that can form a kafka Cluster in combination to other kafka nodes.
 
