@@ -1,9 +1,9 @@
 FROM ubuntu
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
-# Install required tools, tar, curl, net-tools, iproute and Java JRE
+# Install required tools, tar, curl, net-tools, iproute2 and Java JRE
 RUN apt-get update -y && \
-    apt-get install -y tar curl net-tools iproute openjdk-8-jre-headless && \
+    apt-get install -y tar curl net-tools iproute2 openjdk-8-jre-headless && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
