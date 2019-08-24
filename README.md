@@ -1,4 +1,14 @@
-# Kafka Docker Image [![Docker hub](https://img.shields.io/docker/pulls/jnonino/kafka.svg)](https://hub.docker.com/r/jnonino/kafka/)
+# Kafka Docker Image
+
+[![](https://img.shields.io/docker/pulls/jnonino/kafka)](https://hub.docker.com/r/jnonino/kafka/)
+[![](hhttps://img.shields.io/docker/build/jnonino/kafka)](https://hub.docker.com/r/jnonino/kafka/)
+[![](https://img.shields.io/docker/automated/jnonino/kafka)](https://hub.docker.com/r/jnonino/kafka/)
+[![](https://img.shields.io/docker/stars/jnonino/kafka)](https://hub.docker.com/r/jnonino/kafka/)
+[![](https://img.shields.io/github/license/jnonino/kafka-docker-image)](https://github.com/jnonino/kafka-docker-image)
+[![](https://img.shields.io/github/issues/jnonino/kafka-docker-image)](https://github.com/jnonino/kafka-docker-image)
+[![](https://img.shields.io/github/issues-closed/jnonino/kafka-docker-image)](https://github.com/jnonino/kafka-docker-image)
+[![](https://img.shields.io/github/languages/code-size/jnonino/kafka-docker-image)](https://github.com/jnonino/kafka-docker-image)
+[![](https://img.shields.io/github/repo-size/jnonino/kafka-docker-image)](https://github.com/jnonino/kafka-docker-image)
 
 This Docker Image creates a Kafka node that can form a kafka Cluster in combination to other kafka nodes.
 
